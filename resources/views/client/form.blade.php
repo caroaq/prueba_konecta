@@ -1,6 +1,6 @@
 <div class="card push-top" >
 <div class="card-header">
-    <center>Agregar cliente</center>
+    <center>Cliente</center>
   </div>
 
     <div class="card-body"> 
