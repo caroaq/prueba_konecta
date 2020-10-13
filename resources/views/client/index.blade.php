@@ -6,7 +6,7 @@
 
 @if(Session::has('Mensaje')){{
     Session::get('Mensaje')
-}}
+}} 
 @endif
 
 

@@ -41,6 +41,15 @@ class ClientController extends Controller
     public function store(Request $request)
     {
         //
+        $campos=[
+            'doc' => 'required|string|max:15',
+            'name' => 'required|string|max:100',
+            'email' => 'required|email',
+            'adress' => 'required|string|max:100',
+        ];
+        $Message=["required"=> ':attribute requerido'];
+
+        $this->validate($request,$campos,$Message);
         
         $dataClient=request()->except('_token');
 
@@ -84,6 +93,16 @@ class ClientController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $campos=[
+            'doc' => 'required|string|max:15',
+            'name' => 'required|string|max:100',
+            'email' => 'required|email',
+            'adress' => 'required|string|max:100',
+        ];
+        $Message=["required"=> ':attribute requerido'];
+
+        $this->validate($request,$campos,$Message);
+
         $dataClient=request()->except(['_token','_method']);
         Client::where('id','=',$id)->update($dataClient);
 
